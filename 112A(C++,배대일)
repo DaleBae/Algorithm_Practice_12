@@ -1,0 +1,40 @@
+#include<iostream>
+#include<algorithm>
+
+using namespace std;
+
+int main(void) {
+	char A[110];
+	char B[110];
+	cin >> A;
+	cin >> B;
+
+	int n = min(strlen(A),strlen(B));
+	int flag = 0;
+
+	int i = 0;
+	
+	while (flag == 0 && i < n) {
+		if ((int)A[i] % 32 > (int)B[i] % 32) {
+			flag = 1;
+		}
+		else if ((int)A[i] % 32 < (int)B[i] % 32) {
+			flag = -1;
+		}
+		else {
+			flag = 0;
+		}
+		i++;
+	}
+
+	if (flag == 0 && strlen(A)>strlen(B)) {
+		flag = 1;
+	}
+	else if (flag == 0 && strlen(A) < strlen(B)) {
+		flag = -1;
+	}
+	else if (flag == 0 && strlen(A) == strlen(B)) {
+		flag = 0;
+	}
+	cout << flag;
+}
