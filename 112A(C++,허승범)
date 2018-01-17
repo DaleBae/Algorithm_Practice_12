@@ -1,0 +1,27 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main()
+{
+	char str1[101];
+	char str2[101];
+	int i = 0;
+	int j = 0;
+	cin >> str1 >> str2;
+	_strlwr_s(str1, sizeof(str1));
+	_strlwr_s(str2, sizeof(str2));
+
+	while (j == 0)
+	{
+		if (str1[i] < str2[i])
+			j = -1;
+		else if (str1[i] > str2[i])
+			j = 1;
+		if (str1[i] == NULL || str2[i] == NULL)
+			break;
+		i++;
+	}
+	cout << j << endl;
+	return 0;
+}
