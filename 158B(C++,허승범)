@@ -1,0 +1,48 @@
+#include <iostream>
+using namespace std;
+
+int main(void)
+{
+	int count[4] = { 0,0,0,0 };//count[0]=>1의 갯수, count[1]=>2의 갯수 ... count[3]=>택시갯수
+	int temp;
+	int n;
+	cin >> n;
+	for (int i = 0; i < n; i++)
+	{
+		cin >> temp;
+		count[temp-1]++;
+	}
+	while (count[2] > 0)
+	{
+		if (count[0] <= count[2])
+		{
+			count[3] += count[0];
+			count[2] -= count[0];
+			count[0] = 0;
+			count[3] += count[2];
+			count[2] = 0;
+		}
+		else
+		{
+			count[3] += count[2];
+			count[0] -= count[2];
+			count[2] = 0;
+		}
+	}
+	count[3] += (count[1] / 2);
+	count[1] = (count[1] % 2);
+	if (count[1] > 0)
+	{
+		count[3]++;
+		count[1]--;
+		if (count[0] >= 2)
+			count[0] = count[0] - 2;
+		else
+			count[0] = 0;
+	}
+
+	count[3] += (count[0] / 4);
+	if ((count[0] % 4) != 0)
+		count[3]++;
+	cout << count[3];
+}
