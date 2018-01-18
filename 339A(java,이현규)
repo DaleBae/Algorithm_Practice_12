@@ -1,0 +1,21 @@
+import java.util.*;
+public class HelpfulMaths {
+
+	public static void main(String[] args) {
+		//숫자 재배열 함수?
+		//+ 거르고 sorting
+		//Scanner sc = new Scanner(System.in).next().split("\\+");
+		//String input = sc.nextLine();
+	
+		String[] input = new Scanner(System.in).next().split("\\+");
+		
+		Arrays.sort(input);
+		
+		if(input.length<100 && input.equals(null)==false)
+			System.out.println(String.join("+",input));
+		else 
+			System.out.println("재입력");
+		//System.out.println(String.join(delimiter, elements));
+		
+	}
+}
