@@ -1,0 +1,31 @@
+#include<iostream>
+
+using namespace std;
+
+int main(void) {
+	char A[100];
+	cin >> A;
+
+	int n = strlen(A);
+	int len = (n / 2) + 1;
+	
+	int B[55];
+	for (int i = 0; i < len; i++) {
+		B[i] = A[2 * i];
+	}
+	for (int i = 0; i < len; i++) {
+		for (int j = 0; j < len; j++) {
+			if (B[j] > B[i]) {
+				int temp = B[j];
+				B[j] = B[i];
+				B[i] = temp;
+			}
+		}
+	}
+	for (int i = 0; i < len; i++) {
+		A[2 * i] = B[i];
+	}
+	for (int i = 0; i < n; i++) {
+		cout << A[i];
+	}
+}
