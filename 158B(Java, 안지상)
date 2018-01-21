@@ -1,0 +1,45 @@
+package twenty;
+import java.util.Scanner;
+
+public class Two158B {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int groups = sc.nextInt();
+		int storage[] = new int[4];
+		int taxi = 0;
+		int num = 0;
+		
+		for(int i=0; i<groups; i++) {
+			num = sc.nextInt();
+			if(num==4)
+				taxi++; // adding 4s
+			else
+				storage[num-1]++;
+			
+		}
+//		System.out.println("Result after adding all 4s : " +taxi);
+		
+		taxi += Math.min(storage[0], storage[2]); // adding 1,3 pairs
+		num = Math.min(storage[0],  storage[2]);
+		storage[0] -= num; // subtracting paired amount
+		storage[2] -= num; // subtracting paired amount
+		taxi += storage[2]; // adding remaining 3s
+		
+		taxi += storage[1]/2; // adding 2 pairs
+		storage[1] = storage[1]%2;
+		if(storage[1]==1) { // adding remaining 2s if available
+			taxi++;
+			storage[0] -= 2; // subtracts from 1s 
+		}
+		
+		if(storage[0]>0) { 
+			if(storage[0]%4>0) // adds remaining 1s if available
+				taxi++;
+			taxi += storage[0]/4; // adds remaining 1s in multiples of 4 if available
+
+		}
+		System.out.println(taxi);
+
+		
+	}
+}
