@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+public class Six131A {
+	public static void main(String args[]) {
+		Scanner sc = new Scanner(System.in);
+		String s = sc.next();
+		boolean onlyUpperCase = s.equals(s.toUpperCase());
+		boolean onlyUpperCase1 = s.substring(1).equals(s.substring(1).toUpperCase());
+				
+
+		if(Character.isLowerCase(s.charAt(0)) && onlyUpperCase1) 
+			System.out.println(s.substring(0,1).toUpperCase() + s.substring(1).toLowerCase());
+		else if(Character.isUpperCase(s.charAt(0))) {
+			if(onlyUpperCase) {
+				System.out.println(s.substring(0).toLowerCase());
+			} else {
+				System.out.println(s);
+			}
+		} else {
+			System.out.println(s);
+		}
+
+	}
+}
