@@ -1,0 +1,13 @@
+#include<iostream>
+
+using namespace std;
+
+int main(void) {
+	char arr[1001];
+	cin >> arr;
+	int first = (int)arr[0];
+	if (first >= 97) {
+		arr[0] = (char)(first - 32);
+	}
+	cout << arr;
+}
