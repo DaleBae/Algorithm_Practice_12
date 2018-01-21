@@ -1,0 +1,29 @@
+#include<iostream>
+
+using namespace std;
+
+int main(void) {
+	char word[201];
+	cin >> word;
+	char new_word[201] = { 0 };
+
+	int index = 0;
+	bool flag = false;
+
+	for (int i = 0; i < strlen(word); i++) {
+		if (word[i] == 'W'&&word[i + 1] == 'U'&&word[i + 2] == 'B'&&i < strlen(word) - 2 && flag == false) {
+			i += 2;
+		}
+		else if (word[i] == 'W'&&word[i + 1] == 'U'&&word[i + 2] == 'B'&&i < strlen(word) - 2 && flag == true) {
+			new_word[index] = ' ';
+			index++;
+			i += 2;
+		}
+		else {
+			flag = true;
+			new_word[index] = word[i];
+			index++;
+		}
+	}
+	cout << new_word;
+}
