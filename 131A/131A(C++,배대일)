@@ -1,0 +1,44 @@
+#include<iostream>
+
+using namespace std;
+
+int main(void) {
+	char arr[101];
+	cin >> arr;
+
+	bool only_upper = false;
+	bool except_first=false;
+
+	if ((int)arr[0] >= 95) {
+		except_first = true;
+		for (int i = 1; i < strlen(arr); i++) {
+			if ((int)arr[i] >= 95) {
+				except_first = false;
+			}
+		}
+	}
+	else {
+		only_upper = true;
+		for (int i = 1; i < strlen(arr); i++) {
+			if ((int)arr[i] >= 95) {
+				only_upper = false;
+			}
+		}
+	}
+
+	if (only_upper || except_first) {
+		for (int i = 0; i < strlen(arr); i++) {
+			if ((int)arr[i] >= 95) {
+				int temp = (int)arr[i];
+				temp -= 32;
+				arr[i] = (char)temp;
+			}
+			else {
+				int temp = (int)arr[i];
+				temp += 32;
+				arr[i] = (char)temp;
+			}
+		}
+	}
+	cout << arr;
+}
