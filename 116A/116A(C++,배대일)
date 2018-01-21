@@ -1,0 +1,24 @@
+#include<iostream>
+#include<algorithm>
+
+using namespace std;
+
+int main(void) {
+	int capa=0;
+	int cur=0;
+	int stop;
+	cin >> stop;
+	for (int i = 0; i < stop; i++) {
+		int enter;
+		int exit;
+		cin >> exit;
+		cin >> enter;
+		cur -= exit;
+		cur += enter;
+		capa = max(capa, cur);
+
+	}
+	cout << capa;
+
+
+}
