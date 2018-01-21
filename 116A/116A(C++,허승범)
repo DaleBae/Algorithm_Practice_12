@@ -4,17 +4,14 @@ using namespace std;
 int main(void)
 {
 	short n;
-	short * a, *b;
+	short a,b;
 	int rest = 0, max = 0;
 	cin >> n;
 
-	a = new short[n];
-	b = new short[n];
-
 	for (int i = 0; i < n; i++)
 	{
-		cin >> a[i] >> b[i];
-		rest = rest - a[i] + b[i];
+		cin >> a >> b;
+		rest = rest - a + b;
 		max = max > rest ? max : rest;
 	}
 	cout << max;
