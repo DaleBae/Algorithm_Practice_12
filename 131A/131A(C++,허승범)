@@ -1,0 +1,35 @@
+#include<iostream>
+#include<string>
+#include<algorithm>
+using namespace std;
+
+int main(void)
+{
+	string str;
+	cin >> str;
+	int i = 1;
+	bool answer = true;
+
+	while (i < str.size())
+	{
+		if (islower(str.at(i)))
+		{
+			answer = false;
+			break;
+		}
+		i++;
+	}	
+
+	if (answer)
+	{
+		if (islower(str.at(0)))
+		{
+			cout << (char)toupper(str.at(0));
+			str.erase(0, 1);
+		}
+		std::transform(str.begin(), str.end(), str.begin(), tolower);
+		cout << str;
+	}
+	else
+		cout << str;
+}
