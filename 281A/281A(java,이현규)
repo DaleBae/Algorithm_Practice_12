@@ -1,0 +1,23 @@
+/*
+  charAt은 문자하나를 읽어내지만 substring은 문자열을 읽어 낸다.
+
+   첫번째 인수는 시작지점 문자(반환값에 포함),
+
+   두번째 인수는 끝지점에 다음문자(반환값에 포함하지 않는다.)
+   
+   예) "abcde".substring(1, 3)은 "bc"
+   
+ */
+import java.util.Scanner;
+public class Word_Capitalization {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		String s = sc.nextLine();
+		
+		//string의 0번째 대문자로 변환+ 0번쩨 이후의 string
+		String result = s.toUpperCase().charAt(0) + s.substring(1);
+		System.out.println(result);
+	}
+}
