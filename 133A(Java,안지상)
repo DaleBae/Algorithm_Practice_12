@@ -1,6 +1,13 @@
+public class Eight1338A {
+	public static void main(String args[]) {
+		System.out.println(new java.util.Scanner(System.in).next().matches(".*[HQ9].*") ? "YES" : "NO");
+	}
+}
+
+/*
 import java.util.Scanner;
 
-public class Eight1338A {
+   public class Eight1338A {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		String str = sc.next();
@@ -18,3 +25,4 @@ public class Eight1338A {
 			System.out.println("NO");
 	}
 }
+*/
