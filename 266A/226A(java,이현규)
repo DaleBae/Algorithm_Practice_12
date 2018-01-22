@@ -1,0 +1,24 @@
+import java.util.Scanner;
+/*
+ 
+ trim() : 문자열 양끝에 존재하는 공백을 제거해준다. 
+ charAt(n) : n+1 번째에 존재하는 문자를 가져온다. 
+
+ */
+public class StonesOnTheTabel {
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		
+		int n = sc.nextInt();
+		String s = sc.next();
+		
+		int result = 0;
+		
+		for(int i = 0;i<n-1;i++){
+			if(s.charAt(i)==s.charAt(i+1)) 
+				result++;
+		}
+		System.out.println(result);
+	}
+}
