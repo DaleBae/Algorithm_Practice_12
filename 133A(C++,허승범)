@@ -1,0 +1,14 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main(void)
+{
+	string str;
+	int i;
+	cin >> str;
+	if ((str.find('H') != string::npos) || (str.find('Q') != string::npos) || (str.find('9') != string::npos) )
+		cout << "YES";
+	else
+		cout << "NO";
+}
