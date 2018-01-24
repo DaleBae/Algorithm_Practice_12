@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+
+int main(void)
+{
+	int i = 1, j = 0, k = 0;;
+
+	while (k != 1)
+	{
+		cin >> k;
+		j++;
+		if (j == 6)
+		{
+			j = 1; i++;
+		}
+	}
+	cout << ((i > 3 ? i - 3 : 3 - i) + (j > 3 ? j - 3 : 3 - j));
+}
