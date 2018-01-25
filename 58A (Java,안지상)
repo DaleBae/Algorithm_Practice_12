@@ -1,0 +1,10 @@
+import java.util.Scanner;
+
+public class Nine58A {
+	public static void main(String args[]) {
+		Scanner sc = new Scanner(System.in);
+		String str = sc.next();
+		
+		System.out.println(str.matches(".*h.*e.*l.*l.*o.*")?"YES":"NO");
+	}
+}
