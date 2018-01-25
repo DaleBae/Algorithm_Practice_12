@@ -1,0 +1,22 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main(void)
+{
+	string str;
+	cin >> str;
+	int temp;
+
+	if (-1!=(temp = str.find('h')))
+		if (-1 !=( temp = str.find('e', temp+1)))
+			if (-1 != (temp = str.find('l', temp+1)))
+				if (-1 !=( temp = str.find('l', temp+1)))
+					if (-1 != (temp = str.find('o', temp+1)))
+					{
+						cout << "YES";
+						return 0;
+					}
+	cout << "NO";
+	return 0;
+}
