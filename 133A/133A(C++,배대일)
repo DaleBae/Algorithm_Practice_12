@@ -1,0 +1,23 @@
+#include<iostream>
+
+using namespace std;
+
+int main(void) {
+	char str[101];
+	cin >> str;
+	
+	int a = 0;
+	for (int i = 0; i < strlen(str); i++) {
+		int b;
+		b = (int)str[i];
+		if (b == (int)'H' || b == (int)'Q' || b == (int)'9') {
+			a = b;
+		}
+	}
+	if (a != 0) {
+		cout << "YES";
+	}
+	else {
+		cout << "NO";
+	}
+}
