@@ -1,0 +1,7 @@
+#include<stdio.h>#include<string.h>
+int main(void){ int num=0; int i=0,a=0,sum=0; char str[1000]={"0"};
+ scanf("%s",str);  for(i=0;i<strlen(str);i++){  num=num*10+(str[i]-48); //숫자로 바꾸기  if(str[i]=='4' || str[i]=='7'){   a++;  } }  if(a==strlen(str) || num%4==0 || num%7==0 || num%44==0 || num%47==0 || num%77==0 || num%444==0 || num%447==0 || num%474==0 || num%477==0 || num%744==0 || num%747==0 || num%774==0 || num%777==0)  printf("YES"); else  printf("NO");
+
+
+
+
