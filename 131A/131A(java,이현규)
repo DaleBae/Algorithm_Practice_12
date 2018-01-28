@@ -1,0 +1,16 @@
+import java.util.Scanner;
+
+public class capslock {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		String word = sc.nextLine();
+		
+		String result = word.toLowerCase();
+		String result2 = result.toUpperCase().charAt(0) + result.substring(1);
+		
+		System.out.println(result2);
+	}
+
+}
