@@ -1,0 +1,19 @@
+import java.util.Scanner;
+import java.util.regex.Pattern;
+
+public class HQ9 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		String s = sc.nextLine();
+		
+		// 해당되는 string 포함시 true
+		boolean matches = Pattern.matches(".*[HQ9]*.", s);
+		
+		if(matches==true)
+			System.out.println("YES");
+		else
+			System.out.println("NO");
+	}
+}
