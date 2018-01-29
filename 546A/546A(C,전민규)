@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main(void){
+long k=0,w=0;
+unsigned long long n=0;
+int i=0,j=0,sum=0,a=0;
+
+scanf("%ld %ld %ld",&k,&n,&w);
+
+for(i=1;i<=w;i++){
+  sum+=i*k;
+}
+
+a=sum-n;
+if(a>0){
+    printf("%I64d",sum-n);
+ }
+ else{
+    printf("0");
+ }
+ 
+ return 0;
+ }
