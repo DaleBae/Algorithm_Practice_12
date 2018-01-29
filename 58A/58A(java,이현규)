@@ -1,0 +1,7 @@
+public class ChatRoom {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println(new java.util.Scanner(System.in).nextLine().matches(".*h.*e.*l.*l.*o")?"YES" : "NO");
+	}
+}
