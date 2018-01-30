@@ -1,0 +1,81 @@
+#include <iostream>
+#include <string>
+#include <regex>
+using namespace std;
+
+int main(void)
+{
+	string str;
+	int count = 0;
+	int i;
+	regex M_N(".*etr\\b"), F_N(".*etra\\b"), M_V(".*initis\\b"), F_V(".*inites\\b"), M_A(".*lios\\b"), F_A(".*liala\\b");
+
+
+	getline(cin, str);
+
+	for ( i = 0; 0 <= (i = str.find(" ", i)); i++)
+		count++;
+	if (count == 0)
+		if (regex_match(str, M_N) || regex_match(str, M_A) || regex_match(str, M_V) || regex_match(str, F_N) || regex_match(str, F_A) || regex_match(str, F_V))
+		{
+			std::cout << "YES";
+			return 0;
+		}
+		else
+		{
+			std::cout << "NO";
+			return 0;
+		}
+
+	string *ptr = new string[count + 1];
+
+	regex word("[\\w]+");
+	sregex_token_iterator end;
+	sregex_token_iterator iter(str.begin(), str.end(), word);
+	for (i = 0; iter != end; ++iter, i++)
+		ptr[i] = *iter;
+	bool answer;
+	for (i = 0; i < count + 1; i++)
+	{
+		if (regex_match(ptr[i], M_N))
+		{
+			answer = true;
+			for (int j = 0; j < count + 1; j++)
+			{
+				if (j < i)
+				{
+					if (!regex_match(ptr[j], M_A))
+						answer = false;
+				}
+				else if (i < j)
+					if (!regex_match(ptr[j], M_V))
+						answer = false;
+			}
+			break;
+		}
+		else if (regex_match(ptr[i], F_N))
+		{
+			answer = true;
+			for (int j = 0; j < count + 1; j++)
+			{
+				if (j < i)
+				{
+					if (!regex_match(ptr[j], F_A))
+						answer = false;
+				}
+				else if (i < j)
+					if (!regex_match(ptr[j], F_V))
+						answer = false;
+			}
+			break;
+		}
+		else
+			answer = false;
+	}
+	if (answer)
+		std:: cout << "YES";
+	else
+		std::cout << "NO";
+	delete[] ptr;
+	return 0;
+}
