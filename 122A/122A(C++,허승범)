@@ -1,0 +1,26 @@
+#include <iostream>
+#include <regex>
+#include <string>
+int main(void)
+{
+	long long k;
+	std::cin >> k;
+	std::regex lucky("[47]*");
+	if (regex_match(std::to_string(k), lucky))
+	{
+		std::cout << "YES";
+		return 0;
+	}
+	long long i = 4;
+	while (i <= (k / 2))
+	{
+		if (k%i == 0)
+			if (regex_match(std::to_string(i), lucky))
+			{
+				std::cout << "YES";
+				return 0;
+			}
+		i++;
+	}
+	std::cout << "NO";
+	
