@@ -1,0 +1,16 @@
+#include <iostream>
+#include <string>
+int main(void)
+{
+	std::string str;
+	std::cin >> str;
+	int count = 0;
+	for (int i = 97; i <= 122; i++)
+		if (-1 != str.find((char)i))
+			count++;
+			
+	if(count%2!=0)
+		std::cout << "IGNORE HIM!";
+	else
+		std::cout << "CHAT WITH HER!";
+}
