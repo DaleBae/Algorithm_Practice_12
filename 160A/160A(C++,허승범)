@@ -1,0 +1,37 @@
+#include <iostream>
+
+
+int main(void)
+{
+	int n;
+	std::cin >> n;
+
+	int *a = new int[n];
+	int sum = 0;
+	for (int i = 0; i < n; i++)
+	{
+		std::cin >> a[i];
+		sum += a[i];
+	}
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = i+1; j < n; j++)
+		{
+			if (a[i] < a[j])
+			{
+				int temp = a[i];
+				a[i] = a[j];
+				a[j] = temp;
+			}
+		}
+	}
+	int count = 0;
+	int subsum = 0;
+	int i = 0;
+	while (subsum <=(sum / 2))
+	{
+		subsum += a[i++];
+		count++;
+	}
+	std::cout << count;
+}
