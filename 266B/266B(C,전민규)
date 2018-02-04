@@ -1,0 +1,7 @@
+#include <stdio.h>
+int main(void){
+ int i=0,j=0,n=0,t=0; char str[50]={"0"}; char temp=NULL;
+ scanf("%d %d",&n,&t); scanf("%s",str);
+ for(i=0;i<t;i++){  for(j=0;j<n;j++){   if(str[j]=='B'){    if(str[j+1]=='G'){     temp=str[j];     str[j]=str[j+1];     str[j+1]=temp;     j++;    }   }  } }
+ printf("%s",str);
+ return 0;}
