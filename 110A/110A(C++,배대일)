@@ -1,0 +1,23 @@
+#include<iostream>
+
+using namespace std;
+
+int main(void) {
+	__int64 n;
+	cin >> n;
+	__int64 temp = n;
+	int count = 0;
+
+	while (temp >= 1) {
+		if (temp % 10 == 4 || temp % 10 == 7) {
+			count++;
+		}
+		temp /= 10;
+	}
+	if (count == 4 || count == 7) {
+		cout << "YES";
+	}
+	else {
+		cout << "NO";
+	}
+}
