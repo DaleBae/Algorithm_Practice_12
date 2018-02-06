@@ -1,0 +1,27 @@
+#include<iostream>
+
+using namespace std;
+
+int main(void) {
+	int n;
+	cin >> n;
+	bool flag = false;
+	int count = 0;
+	n += 1;
+	while (!flag) {
+		flag = true;
+		int k[10] = { 0 };
+		int temp = n + count;
+		while (temp >= 1) {
+			k[temp % 10]++;
+			temp /= 10;
+		}
+		for (int i = 0; i < 10; i++) {
+			if (k[i] > 1) {
+				flag = false;
+			}
+		}
+		count++;
+	}
+	cout << n+count-1;
+}
