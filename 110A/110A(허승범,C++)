@@ -1,0 +1,39 @@
+#include <iostream>
+
+int main(void)
+{
+	char *n;
+	n = new char[20];
+	std::cin >> n;
+	int count = 0;
+	while ('\0' != *n)
+	{
+		if (('4' == *n) || ('7' == *n))
+		{
+			count++;
+		}
+		n++;
+	}
+
+	char *m = new char[3];
+
+	_itoa_s(count, m,sizeof(m),10);
+	bool near = true;
+	while ('\0' != *m)
+	{
+		if (('4' != *m) && ('7' != *m))
+		{
+			near = false;
+		}
+		m++;
+	}
+	if (near)
+		std::cout << "YES";
+	else
+		std::cout << "NO";
+
+	delete n;
+	delete m;
+
+	return 0;
+}
