@@ -1,0 +1,5 @@
+#include <stdio.h>int main(void){
+ int i=0,j=0; int k=0,l=0,m=0,n=0,d=0; int a=0;  scanf("%d",&k); scanf("%d",&l); scanf("%d",&m); scanf("%d",&n); scanf("%d",&d);
+ for(i=1;i<=d;i++){  if(d>=k || d>=l || d>=m || d>=n){   if(i%k==0 || i%l==0 || i%m==0 || i%n==0){    a++;   }  } }
+ printf("%d",a);
+ return 0;}
